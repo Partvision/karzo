@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>karzo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div>
+      <h1>karzo</h1>
+      <p class="subtitle">Dump, filter, copy, and export proxy links by category</p>
+    </div>
+    <a href="https://discord.gg/TCwnrTvkuA" target="_blank" rel="noopener noreferrer" class="discord-btn">Join the Discord</a>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <div class="control-row">
+        <input id="search" type="search" placeholder="Search by domain or category..." autocomplete="off" />
+        <div class="btn-row">
+          <button id="copy-visible">Copy visible</button>
+          <button id="export-json">Export JSON</button>
+          <button id="export-csv">Export CSV</button>
+        </div>
+      </div>
+
+      <details class="filters" open>
+        <summary>Filter categories</summary>
+        <div id="category-filters" class="chips"></div>
+      </details>
+
+      <div class="meta">
+        <span id="count">0</span> links • <button id="reset">Reset filters</button>
+      </div>
+    </section>
+
+    <section id="list" class="list"></section>
+  </main>
+
+  <footer class="site-footer">
+    <small>Clean list, categorized. Use responsibly.</small>
+  </footer>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "fuse.js": "https://esm.sh/fuse.js@6.6.2"
+    }
+  }
+  </script>
+  <script type="module" src="./data.js"></script>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
